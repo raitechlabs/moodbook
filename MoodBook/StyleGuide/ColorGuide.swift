@@ -24,6 +24,17 @@ enum GradientStyle {
     case gradient1, gradient2, gradient3, gradient4
 }
 
+//MARK: Usage
+extension View {
+    func appColor(ui: UIColorStyle? = nil, chart: ChartColorStyle? = nil, text: TextColorStyle? = nil) -> some View {
+        self.modifier(AppColorModifier(uiColor: ui, chartColor: chart, textColor: text))
+    }
+    func appGradient(_ style: GradientStyle) -> some View {
+           self.modifier(GradientBackgroundModifier(gradientStyle: style))
+       }
+}
+
+//MARK: Implementation
 // MARK: - Color Modifier
 fileprivate struct AppColorModifier: ViewModifier {
     
@@ -116,12 +127,4 @@ fileprivate struct GradientBackgroundModifier: ViewModifier {
 }
 
 
-extension View {
-    func appColor(ui: UIColorStyle? = nil, chart: ChartColorStyle? = nil, text: TextColorStyle? = nil) -> some View {
-        self.modifier(AppColorModifier(uiColor: ui, chartColor: chart, textColor: text))
-    }
-    func appGradient(_ style: GradientStyle) -> some View {
-           self.modifier(GradientBackgroundModifier(gradientStyle: style))
-       }
-}
 

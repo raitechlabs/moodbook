@@ -17,6 +17,15 @@ enum Typography {
     case subText1, subText2, subText3
 }
 
+
+//MARK: Usage
+extension View {
+    func appFont(type: Typography, style: FontStyle? = nil) -> some View {
+        modifier(AppFontModifier(type: type, fontStyle: style))
+    }
+}
+
+//MARK: Implementation
 fileprivate struct AppFontModifier: ViewModifier {
     
     var type: Typography
@@ -56,8 +65,3 @@ fileprivate struct AppFontModifier: ViewModifier {
     }
 }
 
-extension View {
-    func appFont(type: Typography, style: FontStyle? = nil) -> some View {
-        modifier(AppFontModifier(type: type, fontStyle: style))
-    }
-}
