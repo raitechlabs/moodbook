@@ -100,7 +100,7 @@ fileprivate struct GradientBackgroundModifier: ViewModifier {
         switch gradientStyle {
         case .gradient1:
             return LinearGradient(
-                gradient: Gradient(colors: [Color(hex: "#EED3F2"), Color(hex: "#EED3F2")]),
+                gradient: Gradient(colors: [Color(hex: "#EED3F2"), Color(hex: "#FBDCBF")]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )

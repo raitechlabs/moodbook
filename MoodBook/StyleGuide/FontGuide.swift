@@ -45,7 +45,7 @@ fileprivate struct AppFontModifier: ViewModifier {
         switch type {
         case .heading1: return fontNames[.bold]!
         case .heading2, .heading3: return fontNames[.medium]!
-        case .subText1, .subText2, .subText3: return fontNames[.regular]!
+        case .subText1, .subText2, .subText3: return fontNames[.medium]!
         }
     }
     
